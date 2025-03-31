@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>레스토랑 디지털 트윈</title>
+</head>
+<style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    iframe {
+      border: none;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+
+  <!-- 👉 여기! iframe 삽입 -->
+  <iframe
+    id="showcase"
+    src="bundle/showcase.html?m=5F7EgMkQz48&applicationKey=anrseab1byb17gtm399uwf4sa"
+    frameborder="0"
+    allowfullscreen
+    allow="xr-spatial-tracking; fullscreen"
+  ></iframe>
+
+
+
+
+  <script>
+    const iframe = document.getElementById('showcase');
+    const iframeWindow = iframe.contentWindow;
+
+    iframe.addEventListener('load', async () => {
+      try {
+        const sdk = await iframeWindow.MP_SDK.connect(iframeWindow);
+        console.log("🎉 SDK 연결 완료!", sdk);
+
+        // 예시: 카메라 위치 찍어보기
+        const pose = await sdk.Camera.getPose();
+        console.log('카메라 위치:', pose);
+      } catch (err) {
+        console.error("❌ SDK 연결 실패", err);
+      }
+    });
+  </script> 
+
+</body>
+</html>
