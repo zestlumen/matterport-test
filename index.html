@@ -1,54 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>레스토랑 디지털 트윈</title>
-</head>
-<style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-    }
 
-    iframe {
-      border: none;
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
+    <head>
+        <meta charset="UTF-8">
+        <title>레스토랑 디지털 트윈</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-  <!-- 👉 여기! iframe 삽입 -->
-  <iframe
-    id="showcase"
-    src="bundle/showcase.html?m=5F7EgMkQz48&applicationKey=anrseab1byb17gtm399uwf4sa"
-    frameborder="0"
-    allowfullscreen
-    allow="xr-spatial-tracking; fullscreen"
-  ></iframe>
+    <body>
+        <iframe
+            id="showcase"
+            src="bundle/showcase.html?m=5F7EgMkQz48&applicationKey=anrseab1byb17gtm399uwf4sa&qs=0"
+            frameborder="0"
+            allowfullscreen
+            allow="xr-spatial-tracking; fullscreen"
+        ></iframe>
 
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <p>안녕하세요, <strong>에이알미디어웍스</strong> 입니다. </p>
+                <button id="popup-close">확인</button>
+            </div>
+        </div>
 
+        <button id="start-tour">에이알미디어웍스 투어 시작하기</button>
 
-
-  <script>
-    const iframe = document.getElementById('showcase');
-    const iframeWindow = iframe.contentWindow;
-
-    iframe.addEventListener('load', async () => {
-      try {
-        const sdk = await iframeWindow.MP_SDK.connect(iframeWindow);
-        console.log("🎉 SDK 연결 완료!", sdk);
-
-        // 예시: 카메라 위치 찍어보기
-        const pose = await sdk.Camera.getPose();
-        console.log('카메라 위치:', pose);
-      } catch (err) {
-        console.error("❌ SDK 연결 실패", err);
-      }
-    });
-  </script> 
-
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
