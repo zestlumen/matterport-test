@@ -176,35 +176,8 @@ iframe {
     cursor: pointer;
   }
 
-  #avatar-btn {
-    position: absolute;
-    top: 120px;
-    right: 20px;
-    z-index: 1000;
-    padding: 10px 16px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-    background: #007aff;
-    color: white;
-    cursor: pointer;
-  }
-
   #sunglass-btn {
     position: absolute;
-    top: 170px;
-    right: 20px;
-    z-index: 1000;
-    padding: 10px 16px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: none;
-    background: #007aff;
-    color: white;
-    cursor: pointer;
-  }
-{
-    position: absolute;
     top: 120px;
     right: 20px;
     z-index: 1000;
@@ -216,7 +189,6 @@ iframe {
     color: white;
     cursor: pointer;
   }
-
 
   #popup_3d {
     position: fixed;

@@ -99,22 +99,6 @@ closePopupAvatar.addEventListener("click", () => {
   popupAvatar.classList.add("hidden");
 });
 
-// Ready Player Me에서 아바타 URL 받기
-window.addEventListener("message", (event) => {
-  const json = JSON.parse(event.data);
-  if (json.source === "readyplayerme") {
-    if (json.eventName === "v1.avatar.exported") {
-      const avatarUrl = json.data.url;
-      console.log("✅ 아바타 생성 완료! GLB 주소:", avatarUrl);
-
-      // 예: 바로 model-viewer에 적용
-      // document.querySelector("model-viewer").src = avatarUrl;
-
-      // 팝업 닫기
-      popupAvatar.classList.add("hidden");
-    }
-  }
-});
 
 const sunglassBtn = document.getElementById("sunglass-btn");
 const popupSunglass = document.getElementById("popup_sunglass");
